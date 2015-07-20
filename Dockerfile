@@ -4,3 +4,11 @@ RUN wget http://s3.amazonaws.com/jruby.org/downloads/1.7.21/jruby-bin-1.7.21.tar
 RUN tar -xzf jruby-bin-1.7.21.tar.gz
 RUN wget https://github.com/stuart-robinson/kafka-ping/archive/master.zip
 RUN unzip master.zip
+ENV JAVA_HOME=/jre \
+    PATH=$PATH:/jruby-1.7.21/bin
+RUN gem install bundler jruby-kafka
+RUN cd /kafka-ping-master && bundle install
+WORKDIR /kafka-ping-master
+ENTRYPOINT exec jruby run.rb
+
+
