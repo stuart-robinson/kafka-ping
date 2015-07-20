@@ -28,7 +28,7 @@ class Consumer
 
     loop do
       if !queue.empty?
-        puts "#{count}\t#{queue.pop.message.to_s}"
+        $stdout.puts "#{count}\t#{queue.pop.message.to_s}"
         count += 1
       end
     end

@@ -35,7 +35,7 @@ class Producer
     producer.connect()
 
     trap('SIGINT') do
-      puts "produced #{count} messages"
+      $stdout.puts "produced #{count} messages"
       exit
     end
 
