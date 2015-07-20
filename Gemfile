@@ -3,4 +3,4 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem 'jruby-kafka'
-gem 'hermann'
+gem 'zk'

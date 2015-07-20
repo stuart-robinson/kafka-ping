@@ -1,24 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    concurrent-ruby (0.7.2-java)
-    hermann (0.25.0.1-java)
-      concurrent-ruby (~> 0.7.0)
-      jar-dependencies (~> 0.1.10)
-      json (~> 1.8.2)
-      thread_safe (~> 0.3.4)
-    jar-dependencies (0.1.16.pre)
     jruby-kafka (0.1.0)
-    json (1.8.3-java)
-    thread_safe (0.3.5-java)
+    little-plugger (1.1.3)
+    logging (1.8.2)
+      little-plugger (>= 1.1.3)
+      multi_json (>= 1.8.4)
+    multi_json (1.11.2)
+    slyphon-log4j (1.2.15)
+    slyphon-zookeeper_jar (3.3.5-java)
+    zk (1.9.5)
+      logging (~> 1.8.2)
+      zookeeper (~> 1.4.0)
+    zookeeper (1.4.10)
+    zookeeper (1.4.10-java)
+      slyphon-log4j (= 1.2.15)
+      slyphon-zookeeper_jar (= 3.3.5)
 
 PLATFORMS
   java
   ruby
 
 DEPENDENCIES
-  hermann
   jruby-kafka
+  zk
 
 BUNDLED WITH
    1.10.5
