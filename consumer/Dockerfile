@@ -9,8 +9,7 @@ ENV JAVA_HOME=/jre \
 RUN gem install bundler jruby-kafka
 RUN cd /kafka-ping-master && bundle install
 WORKDIR /kafka-ping-master
-#ENTRYPOINT envconsul -consul consul.service.consul:8500 -prefix zk/config
-#CMD jruby run.rb -p
-CMD /bin/bash
+ENTRYPOINT envconsul -consul consul.service.consul:8500 -prefix zk/config
+CMD jruby run.rb -c
 
 

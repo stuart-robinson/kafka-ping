@@ -7,6 +7,7 @@ zk = if ENV.has_key?('ZK_ADDRESS')
        "localhost:2181"
      end
 
+$stderr.puts zk
 
 if ARGV.empty?
   $stderr.puts "Commands:\n-c Run a consumer\n-p Run a producer"
